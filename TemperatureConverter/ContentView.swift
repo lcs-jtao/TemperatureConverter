@@ -12,6 +12,10 @@ struct ContentView: View {
     @State var celciusDegree: Double = 20.0
     
     // MARK: Computed properties
+    var fahrenheitDegree: Double {
+        return (celciusDegree * 1.8) + 32
+    }
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             // Celcius degree input
@@ -36,7 +40,18 @@ struct ContentView: View {
                 Spacer()
                 Text("\(String(format: "%.0f", celciusDegree))°C")
                     .bold()
-                    .font(.title2)
+                Spacer()
+            }
+            
+            // Fahrenheit degree output
+            Text("Fahrenheit")
+                .font(.title2)
+                .bold()
+            
+            HStack {
+                Spacer()
+                Text("\(String(format: "%.0f", fahrenheitDegree))°C")
+                    .bold()
                 Spacer()
             }
             
