@@ -50,7 +50,7 @@ struct ContentView: View {
             
             HStack {
                 Spacer()
-                Text("\(String(format: "%.0f", fahrenheitDegree))°C")
+                Text("\(String(format: "%.1f", fahrenheitDegree))°F")
                     .bold()
                 Spacer()
             }
